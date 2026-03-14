@@ -1,0 +1,205 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>FEMMELY - Contact Us</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,300;0,400;0,600;0,700;0,800;1,400&display=swap" rel="stylesheet">
+</head>
+<body class="settings-page-bg">
+
+    <nav class="navbar">
+        <div class="logo"><a href = "index.html">FEMMELY</a></div>
+        <div class="nav-right">
+            <ul class="nav-links" id="navLinks">
+                <li><a href="index.html" class="nav-item">Home</a></li>
+                <li><a href="about-us.html" class="nav-item">About Us</a></li>
+                <li><a href="femmely-map.html" class="nav-item">Femmely Map</a></li>
+                <li><a href="haven.html" class="nav-item">Haven</a></li>
+                <li><a href="profile-help.html" class="nav-item">Help</a></li>
+            </ul>
+            <div class="nav-icons">
+                <i class="fa-solid fa-bars menu-icon" onclick="toggleMenu()"></i>
+                <a href="login.html" class="login-btn"><i class="fa-regular fa-circle-user"></i> Login</a>
+            </div>
+        </div>
+    </nav>
+
+    <div class="settings-layout">
+        
+        <div class="sidebar">
+            <div class="sidebar-menu">
+                <h2>Settings</h2>
+                <div class="sidebar-links">
+                    <a href="profile-edit.html">Edit Profile</a>
+                    <a href="profile-account.html">Account Management</a>
+                    <a href="profile-help.html">Help</a>
+                    <a href="profile-contact.html" class="active">Contact Us</a>
+                </div>
+            </div>
+
+            <div class="sidebar-slider-card">
+                <div class="slides">
+                    <div class="slide">
+                        <div class="slide-header">
+                            <i class="fa-solid fa-venus"></i>
+                        <h3>Women Safety Matters</h3>
+                        </div>
+                        <p class="slide-text">1 in 3 women globally experience physical or sexual violence in their lifetime.</p>
+                        <p class="slide-source">--WHO, 2021</p>
+                    </div>
+                    <div class="slide">
+                        <div class="slide-header">
+                        <i class="fa-solid fa-shield-heart"></i>
+                        <h3>The power of collective safety</h3>
+                    </div>
+                        <p class="slide-text">Peer-to-peer safety networks can reduce the "bystander effect," making people 40% more likely to intervene when they feel part of a connected community.</p>
+                        <p class="slide-source">--Psychology Today, 2022</p>
+                    </div>
+                    <div class="slide">
+                        <div class="slide-header">
+                        <i class="fa-solid fa-location-dot"></i>
+                        <h3>Environmental factors and perceived safety.</h3>
+                    </div>
+                        <p class="slide-text">"Perceived safety" is heavily influenced by "eyes on the street." High-activity areas are statistically safer than isolated, poorly lit shortcuts.</p>
+                        <p class="slide-source">--Urban Design Journal</p>
+                    </div>
+                    <div class="slide">
+                        <div class="slide-header">
+                        <i class="fa-solid fa-phone-volume"></i>
+                        <h3>The importance of rapid response.</h3>
+                    </div>
+                        <p class="slide-text">In an emergency, the first 60 seconds are the most critical. Having pre-set emergency contacts reduces response time by an average of 5 minutes.</p>
+                        <p class="slide-source">--National Safety Council</p>
+                    </div>
+                    <div class="slide">
+                        <div class="slide-header">
+                        <i class="fa-solid fa-user-shield"></i>
+                        <h3>The data gap in women's safety.</h3>
+                    </div>
+                        <p class="slide-text">Up to 80% of street harassment incidents go unreported to official authorities. Community reporting helps bridge this "dark figure" of crime statistics.</p>
+                        <p class="slide-source">--UN Women</p>
+                    </div>
+                </div>
+
+                <div class="dots-container">
+                    <span class="dot dot-1"></span>
+                    <span class="dot dot-2"></span>
+                    <span class="dot dot-3"></span>
+                    <span class="dot dot-4"></span>
+                    <span class="dot dot-5"></span>
+                </div>
+            </div>
+        </div>
+            
+        <div class="main-content">
+            
+            <div class="profile-header">
+                <div class="profile-info-top">
+                    <div class="profile-pic-wrapper">
+                        <img src="data:image/svg+xml;charset=UTF-8,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Ccircle cx='50' cy='50' r='50' fill='%231a111e'/%3E%3Ccircle cx='50' cy='36' r='18' stroke='%23ffffff' stroke-width='4' fill='none'/%3E%3Cpath d='M20 85 C 20 55, 80 55, 80 85' stroke='%23ffffff' stroke-width='4' fill='none' stroke-linecap='round'/%3E%3C/svg%3E" alt="Profile">
+                    </div>
+                    <div class="user-details">
+                        <h1 id="header">Your voice matters to us, Murphiee.</h1>
+                        <p class="username">We'd love to hear from you! Send us your feedback, questions, or suggestions.</p>
+                    </div>
+                </div>
+            </div>
+
+
+            <div class="edit-form-section">
+                <h2>Contact Us</h2>
+                <p class="subtitle" style="margin-bottom: 30px;">Select a category below and let us know what's on your mind. We're here to make Femmely better for everyone.</p>
+
+                <form id="contactForm">
+                    <div class="account-layout-grid">
+                        
+                        <div class="account-layout-col">
+                            
+                            <div class="input-group">
+                                <label>Your Email</label>
+                                <input type="email" placeholder="name@gmail.com">
+                            </div>
+
+                            <div class="input-group">
+                                <br>
+                                <label style="margin-bottom: 10px;">How can we Help?</label>
+                                
+                                <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 15px;">
+                                    
+                                    <div style="display: flex; flex-direction: column; gap: 15px;">
+                                        <label class="radio-label">
+                                            <input type="radio" name="help_type" value="feedback" class="radio-input">
+                                            <span class="custom-radio"></span> Feedback
+                                        </label>
+                                        <label class="radio-label">
+                                            <input type="radio" name="help_type" value="question" class="radio-input" checked>
+                                            <span class="custom-radio"></span> Question
+                                        </label>
+                                    </div>
+
+                                    <div style="display: flex; flex-direction: column; gap: 15px;">
+                                        <label class="radio-label">
+                                            <input type="radio" name="help_type" value="suggestion" class="radio-input">
+                                            <span class="custom-radio"></span> Suggestion
+                                        </label>
+                                        <label class="radio-label">
+                                            <input type="radio" name="help_type" value="others" class="radio-input">
+                                            <span class="custom-radio"></span> Others
+                                        </label>
+                                    </div>
+                                    
+                                </div>
+                            </div>
+
+                        </div>
+
+                        <div class="account-layout-col" style="height: 100%;">
+                            <br>
+                            <div class="input-group" style="flex-grow: 1;">
+                                <label>Your message</label>
+                                <textarea placeholder="Tell us what's on your mind.." style="height: 100%; min-height: 180px; resize: none;"></textarea>
+                            </div>
+                            
+                            <div style="display: flex; justify-content: flex-end; margin-top: 15px;">
+                                <button type="submit" class="btn-outline submit-contact-btn">Submit</button>
+                            </div>
+
+                        </div>
+                    </div>
+                </form>
+
+            </div>
+        </div>
+    </div>
+
+    <script src="json/profile-contact.js"></script>
+    <script src="json/login.js"></script>
+
+        
+
+    <footer>
+        <div class="footer-logo">
+            <img src="pic/femlogo.png" alt="FEMMELY Logo" onerror="this.style.display='none'"> FEMMELY
+        </div>
+        <p class="footer-tagline">Empowering Women Through Safety & Community</p>
+        <div class="footer-nav">
+            <a href="index.html">Home</a>
+            <a href="about-us.html">About Us</a>
+            <a href="femmely-map.html">Femmely Map</a>
+            <a href="haven.html">Haven</a>
+            <a href="profile-help.html">Help</a>
+        </div>
+        <div class="footer-socials">
+            <a href="#" class="social-icon"><img src="pic/instagram.png" alt="Insta"></a>
+            <a href="#" class="social-icon"><img src="pic/facebook.png" alt="FB"></a>
+            <a href="#" class="social-icon"><img src="pic/google.png" alt="Google"></a>
+            <a href="#" class="social-icon"><img src="pic/linkedin.png" alt="X"></a>
+        </div>
+        <p class="copyright">FEMMELY ©2026 All rights reserved</p>
+    </footer>
+
+</body>
+</html>

@@ -1,0 +1,171 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>FEMMELY - Help Center</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,300;0,400;0,600;0,700;0,800;1,400&display=swap" rel="stylesheet">
+</head>
+<body class="settings-page-bg">
+
+    <nav class="navbar">
+        <div class="logo"><a href = "index.html">FEMMELY</a></div>
+        <div class="nav-right">
+            <ul class="nav-links" id="navLinks">
+                <li><a href="index.html" class="nav-item">Home</a></li>
+                <li><a href="about-us.html" class="nav-item">About Us</a></li>
+                <li><a href="femmely-map.html" class="nav-item">Femmely Map</a></li>
+                <li><a href="haven.html" class="nav-item">Haven</a></li>
+                <li><a href="profile-help.html" class="nav-item active">Help</a></li>
+            </ul>
+            <div class="nav-icons">
+                <i class="fa-solid fa-bars menu-icon" onclick="toggleMenu()"></i>
+                <a href="login.html" class="login-btn"><i class="fa-regular fa-circle-user"></i> Login</a>
+            </div>
+        </div>
+    </nav>
+
+    <div class="settings-layout">
+        <div class="sidebar">
+            <div class="sidebar-menu">
+                <h2>Settings</h2>
+                <div class="sidebar-links">
+                    <a href="profile-edit.html">Edit Profile</a>
+                    <a href="profile-account.html">Account Management</a>
+                    <a href="profile-help.html" class="active">Help</a>
+                    <a href="profile-contact.html">Contact Us</a>
+                </div>
+            </div>
+
+            <div class="sidebar-slider-card">
+                <div class="slides">
+                    <div class="slide">
+                        <div class="slide-header">
+                            <i class="fa-solid fa-venus"></i>
+                        <h3>Women Safety Matters</h3>
+                        </div>
+                        <p class="slide-text">1 in 3 women globally experience physical or sexual violence in their lifetime.</p>
+                        <p class="slide-source">--WHO, 2021</p>
+                    </div>
+                    <div class="slide">
+                        <div class="slide-header">
+                        <i class="fa-solid fa-shield-heart"></i>
+                        <h3>The power of collective safety</h3>
+                    </div>
+                        <p class="slide-text">Peer-to-peer safety networks can reduce the "bystander effect," making people 40% more likely to intervene when they feel part of a connected community.</p>
+                        <p class="slide-source">--Psychology Today, 2022</p>
+                    </div>
+                    <div class="slide">
+                        <div class="slide-header">
+                        <i class="fa-solid fa-location-dot"></i>
+                        <h3>Environmental factors and perceived safety.</h3>
+                    </div>
+                        <p class="slide-text">"Perceived safety" is heavily influenced by "eyes on the street." High-activity areas are statistically safer than isolated, poorly lit shortcuts.</p>
+                        <p class="slide-source">--Urban Design Journal</p>
+                    </div>
+                    <div class="slide">
+                        <div class="slide-header">
+                        <i class="fa-solid fa-phone-volume"></i>
+                        <h3>The importance of rapid response.</h3>
+                    </div>
+                        <p class="slide-text">In an emergency, the first 60 seconds are the most critical. Having pre-set emergency contacts reduces response time by an average of 5 minutes.</p>
+                        <p class="slide-source">--National Safety Council</p>
+                    </div>
+                    <div class="slide">
+                        <div class="slide-header">
+                        <i class="fa-solid fa-user-shield"></i>
+                        <h3>The data gap in women's safety.</h3>
+                    </div>
+                        <p class="slide-text">Up to 80% of street harassment incidents go unreported to official authorities. Community reporting helps bridge this "dark figure" of crime statistics.</p>
+                        <p class="slide-source">--UN Women</p>
+                    </div>
+                </div>
+
+                <div class="dots-container">
+                    <span class="dot dot-1"></span>
+                    <span class="dot dot-2"></span>
+                    <span class="dot dot-3"></span>
+                    <span class="dot dot-4"></span>
+                    <span class="dot dot-5"></span>
+                </div>
+            </div>
+        </div>
+
+        <div class="main-content">
+            <div class="profile-header">
+                <div class="profile-info-top">
+                    <div class="profile-pic-wrapper">
+                        <img src="data:image/svg+xml;charset=UTF-8,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Ccircle cx='50' cy='50' r='50' fill='%231a111e'/%3E%3Ccircle cx='50' cy='36' r='18' stroke='%23ffffff' stroke-width='4' fill='none'/%3E%3Cpath d='M20 85 C 20 55, 80 55, 80 85' stroke='%23ffffff' stroke-width='4' fill='none' stroke-linecap='round'/%3E%3C/svg%3E" alt="Profile">
+                    </div>
+                    <div class="user-details">
+                        <h1 id="header">How can we help, Murphiee?</h1>
+                        <p class="username">Search our resources or browse categories below.</p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="edit-form-section">
+                <div class="search-container">
+                    <i class="fa-solid fa-magnifying-glass"></i>
+                    <input type="text" placeholder="Search for safety tips, map guides, etc...">
+                </div>
+
+                <div class="form-grid"> <div class="sidebar-menu help-card">
+                        <i class="fa-solid fa-map-location-dot"></i>
+                        <h3>Femmely Map</h3>
+                        <p style="font-size: 0.8rem; opacity: 0.7;">Learn how to pin dangerous zones and find verified safe havens.</p>
+                    </div>
+
+                    <div class="sidebar-menu help-card">
+                        <i class="fa-solid fa-comments"></i>
+                        <h3>Femmunity Feed</h3>
+                        <p style="font-size: 0.8rem; opacity: 0.7;">Guidelines for sharing stories and keeping the sisterhood safe.</p>
+                    </div>
+
+                    <div class="sidebar-menu help-card">
+                        <i class="fa-solid fa-user-shield"></i>
+                        <h3>Account & Privacy</h3>
+                        <p style="font-size: 0.8rem; opacity: 0.7;">Managing your verification status and personal data visibility.</p>
+                    </div>
+
+                    <div class="sidebar-menu help-card">
+                        <i class="fa-solid fa-triangle-exclamation"></i>
+                        <h3>Emergency SOS</h3>
+                        <p style="font-size: 0.8rem; opacity: 0.7;">How to trigger emergency contacts and contact local authorities.</p>
+                    </div>
+                </div>
+
+                <div style="margin-top: 40px; text-align: center;">
+                    <p style="font-size: 0.9rem; opacity: 0.8;">Still have questions?</p>
+                    <a href="profile-contact.html" class="btn-outline" style="display: inline-block; margin-top: 10px; text-decoration: none;">Contact Support</a>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script src="json/profile-help.js"></script>
+
+    <footer>
+        <div class="footer-logo">
+            <img src="pic/femlogo.png" alt="FEMMELY Logo" onerror="this.style.display='none'"> FEMMELY
+        </div>
+        <p class="footer-tagline">Empowering Women Through Safety & Community</p>
+        <div class="footer-nav">
+            <a href="index.html">Home</a>
+            <a href="about-us.html">About Us</a>
+            <a href="femmely-map.html">Femmely Map</a>
+            <a href="haven.html">Haven</a>
+            <a href="profile-help.html">Help</a>
+        </div>
+        <div class="footer-socials">
+            <a href="#" class="social-icon"><img src="pic/instagram.png" alt="Insta"></a>
+            <a href="#" class="social-icon"><img src="pic/facebook.png" alt="FB"></a>
+            <a href="#" class="social-icon"><img src="pic/google.png" alt="Google"></a>
+            <a href="#" class="social-icon"><img src="pic/linkedin.png" alt="X"></a>
+        </div>
+        <p class="copyright">FEMMELY ©2026 All rights reserved</p>
+    </footer>
+</body>
+</html>

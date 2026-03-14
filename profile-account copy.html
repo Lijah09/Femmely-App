@@ -1,0 +1,270 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>FEMMELY - Account Management</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,300;0,400;0,600;0,700;0,800;1,400&display=swap" rel="stylesheet">
+</head>
+<body class="settings-page-bg">
+
+    <nav class="navbar">
+        <div class="logo"><a href = "index.html">FEMMELY</a></div>
+        <div class="nav-right">
+            <ul class="nav-links" id="navLinks">
+                <li><a href="index.html" class="nav-item">Home</a></li>
+                <li><a href="#" class="nav-item">About Us</a></li>
+                <li><a href="femmely-map.html" class="nav-item">Femmely Map</a></li>
+                <li><a href="haven.html" class="nav-item">Haven</a></li>
+                <li><a href="profile-help.html" class="nav-item">Help</a></li>
+            </ul>
+            <div class="nav-icons">
+                <i class="fa-solid fa-bars menu-icon" onclick="toggleMenu()"></i>
+                <a href="login.html" class="login-btn"><i class="fa-regular fa-circle-user"></i> Login</a>
+            </div>
+        </div>
+    </nav>
+
+    <div class="settings-layout">
+        
+        <div class="sidebar">
+            <div class="sidebar-menu">
+                <h2>Settings</h2>
+                <div class="sidebar-links">
+                    <a href="profile-edit.html">Edit Profile</a>
+                    <a href="profile-account.html" class="active">Account Management</a>
+                    <a href="profile-help.html">Help</a>
+                    <a href="profile-contact.html">Contact Us</a>
+                </div>
+            </div>
+
+            <div class="sidebar-slider-card">
+                <div class="slides">
+                    <div class="slide">
+                        <div class="slide-header">
+                            <i class="fa-solid fa-venus"></i>
+                        <h3>Women Safety Matters</h3>
+                        </div>
+                        <p class="slide-text">1 in 3 women globally experience physical or sexual violence in their lifetime.</p>
+                        <p class="slide-source">--WHO, 2021</p>
+                    </div>
+                    <div class="slide">
+                        <div class="slide-header">
+                        <i class="fa-solid fa-shield-heart"></i>
+                        <h3>The power of collective safety</h3>
+                    </div>
+                        <p class="slide-text">Peer-to-peer safety networks can reduce the "bystander effect," making people 40% more likely to intervene when they feel part of a connected community.</p>
+                        <p class="slide-source">--Psychology Today, 2022</p>
+                    </div>
+                    <div class="slide">
+                        <div class="slide-header">
+                        <i class="fa-solid fa-location-dot"></i>
+                        <h3>Environmental factors and perceived safety.</h3>
+                    </div>
+                        <p class="slide-text">"Perceived safety" is heavily influenced by "eyes on the street." High-activity areas are statistically safer than isolated, poorly lit shortcuts.</p>
+                        <p class="slide-source">--Urban Design Journal</p>
+                    </div>
+                    <div class="slide">
+                        <div class="slide-header">
+                        <i class="fa-solid fa-phone-volume"></i>
+                        <h3>The importance of rapid response.</h3>
+                    </div>
+                        <p class="slide-text">In an emergency, the first 60 seconds are the most critical. Having pre-set emergency contacts reduces response time by an average of 5 minutes.</p>
+                        <p class="slide-source">--National Safety Council</p>
+                    </div>
+                    <div class="slide">
+                        <div class="slide-header">
+                        <i class="fa-solid fa-user-shield"></i>
+                        <h3>The data gap in women's safety.</h3>
+                    </div>
+                        <p class="slide-text">Up to 80% of street harassment incidents go unreported to official authorities. Community reporting helps bridge this "dark figure" of crime statistics.</p>
+                        <p class="slide-source">--UN Women</p>
+                    </div>
+                </div>
+
+                <div class="dots-container">
+                    <span class="dot dot-1"></span>
+                    <span class="dot dot-2"></span>
+                    <span class="dot dot-3"></span>
+                    <span class="dot dot-4"></span>
+                    <span class="dot dot-5"></span>
+                </div>
+            </div>
+        </div>
+    
+
+        <div class="main-content">
+            
+            <div class="profile-header">
+                <div class="profile-info-top">
+                    <div class="profile-pic-wrapper" onclick="document.getElementById('fileInput').click()" title="Click to upload new picture">
+                        <img id="headerProfilePic" src="data:image/svg+xml;charset=UTF-8,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Ccircle cx='50' cy='50' r='50' fill='%231a111e'/%3E%3Ccircle cx='50' cy='36' r='18' stroke='%23ffffff' stroke-width='4' fill='none'/%3E%3Cpath d='M20 85 C 20 55, 80 55, 80 85' stroke='%23ffffff' stroke-width='4' fill='none' stroke-linecap='round'/%3E%3C/svg%3E" alt="Profile Placeholder">
+                    </div>
+                    <input type="file" id="fileInput" accept="image/png, image/jpeg">
+
+                    <div class="user-details">
+                        <h1 id="display-name">Murphiee</h1>
+                        <p class="username" id="display-username">@mores0juplease</p>
+                        <div class="stats">
+                            <span>10 followers</span>
+                            <span>12 following</span>
+                            <span>2 entries</span>
+                        </div>
+                        <a href="profile-edit.html" class="btn-outline">Edit Profile</a>
+                    </div>
+                </div>
+            </div>
+
+            <div class="edit-form-section">
+                <h2>Account Management</h2>
+                <p class="subtitle">Make changes to your personal information or account type.</p>
+
+                <form id="accountForm">
+                    <div  class="form-grid">
+                        <div class="account-col">
+                            <div class="input-group">
+                                <label>Email</label>
+                                <input type="email" id="userEmailInput" placeholder="name@gmail.com" readonly>
+                                <div class="input-subtext text-purple">
+                                    <i class="fa-solid fa-certificate"></i> Verified
+                                </div>
+                            </div>
+
+                            <div class="input-group">
+                                <label>Password</label>
+                                <input type="password" id="userPasswordInput" placeholder="••••••" readonly>
+                                <div class="input-subtext">
+                                    <span class="text-link" onclick="openModal('passwordModal')">Change Password</span>
+                                </div>
+                            </div>
+
+                            <h3 class="account-section-title">Account Actions</h3>
+                            <div class="action-buttons-row">
+                                <button type="button" class="btn-outline" onclick="openModal('logoutModal')">Log Out</button>
+                                <button type="button" class="btn-outline btn-danger" onclick="openModal('deleteModal')">Delete Account</button>
+                            </div>
+                        </div>
+
+                        <div class="account-col">
+                            <h3 class="account-section-title">Profile Information</h3>
+                            
+                            <div class="input-group">
+                                <label>Birthdate</label>
+                                <input type="date" id="userBirthDate" placeholder="04/16/2006">
+                            </div>
+
+                            <div class="input-group">
+                                <label>Gender</label>
+                                <div class="radio-group">
+                                    <label class="radio-label">
+                                        <input type="radio" name="gender" value="male" class="radio-input">
+                                        <span class="custom-radio"></span> Male
+                                    </label>
+                                    <label class="radio-label">
+                                        <input type="radio" name="gender" value="female" class="radio-input" checked>
+                                        <span class="custom-radio"></span> Female
+                                    </label>
+                                    <label class="radio-label">
+                                        <input type="radio" name="gender" value="nonbinary" class="radio-input">
+                                        <span class="custom-radio"></span> Non-Binary
+                                    </label>
+                                </div>
+                            </div>
+
+                            <div class="input-group">
+                                <label>Country/Region</label>
+                                <input type="text" id="userLocation" placeholder="Philippines">
+                            </div>
+                        </div>
+                    </div>
+
+                    <div style="display: flex; justify-content: flex-end; margin-top: 30px;">
+                        <button type="submit" class="btn-outline save-account-btn">Save Changes</button>
+                    </div>
+                </form>
+
+            </div>
+        </div>
+    </div>
+
+    <script src="/FEMMELY/json/profile-account.js"></script>
+    <script src="/FEMMELY/json/login.js"></script>
+
+    
+
+    <div id="logoutModal" class="modal-overlay">
+    <div class="modal-box">
+        <h3>Heading out? 👋</h3>
+        <p>The sisterhood will hold down the fort while you're gone. Stay safe out there, gurlie!</p>
+        <div class="modal-buttons">
+            <button class="btn-gradient-border" onclick="closeModal('logoutModal')">Naurr</button>
+            <button class="btn-gradient-border" onclick="window.location.href='login.html'">Yuhh</button>
+        </div>
+    </div>
+</div>
+
+<div id="deleteModal" class="modal-overlay">
+    <div class="modal-box" style="border-color: #f87171;">
+        <h3 style="color: #f87171;">Hold up! 🚨</h3>
+        <p>Are you absolutely, 100% sure? This is the point of no return. Your entries, connections, and map pins will vanish into the void forever.</p>
+        <div class="modal-buttons">
+            <button class="btn-gradient-border" onclick="closeModal('deleteModal')">Nevermind</button>
+            <button class="btn-danger-border" onclick="alert('Account Deleted. (Just kidding!)')">Adios</button>
+        </div>
+    </div>
+</div>
+
+<div id="passwordModal" class="modal-overlay">
+    <div class="modal-box">
+        <h3 style="margin-bottom: 5px;">Change Password 🔒</h3>
+        <p style="margin-bottom: 25px;">Secure your account with a strong new password.</p>
+
+        <div class="password-form">
+            <div class="input-group">
+                <label>Current Password</label>
+                <input type="password" id="modalCurrentPassword" placeholder="Enter current password">
+            </div>
+            
+            <div class="input-group">
+                <label>New Password</label>
+                <input type="password" id="modalNewPassword" placeholder="Enter new password">
+            </div>
+            
+            <div class="input-group" style="margin-bottom: 0;">
+                <label>Confirm New Password</label>
+                <input type="password" id="modalConfirmPassword" placeholder="Confirm new password">
+            </div>
+        </div>
+
+        <div class="modal-buttons">
+            <button class="btn-gradient-border modal-btn-wide" onclick="closeModal('passwordModal')">Cancel</button>
+            <button class="btn-gradient modal-btn-wide" onclick="changePasswordHandler()">Update Password</button>
+        </div>
+    </div>
+</div>
+
+</body>
+
+<footer>
+        <div class="footer-logo">
+            <img src="pic/femlogo.png" alt="FEMMELY Logo" onerror="this.style.display='none'"> FEMMELY
+        </div>
+        <p class="footer-tagline">Empowering Women Through Safety & Community</p>
+        <div class="footer-nav">
+            <a href="index.html">Home</a>
+            <a href="about-us.html">About Us</a>
+            <a href="femmely-map.html">Femmely Map</a>
+            <a href="haven.html">Haven</a>
+            <a href="profile-help.html">Help</a>
+        </div>
+        <div class="footer-socials">
+            <a href="#" class="social-icon"><img src="pic/instagram.png" alt="Insta"></a>
+            <a href="#" class="social-icon"><img src="pic/facebook.png" alt="FB"></a>
+            <a href="#" class="social-icon"><img src="pic/google.png" alt="Google"></a>
+            <a href="#" class="social-icon"><img src="pic/linkedin.png" alt="X"></a>
+        </div>
+        <p class="copyright">FEMMELY ©2026 All rights reserved</p>
+    </footer>
+</html>

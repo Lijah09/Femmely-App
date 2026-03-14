@@ -1,0 +1,214 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>FEMMELY</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,300;0,400;0,600;0,700;0,800;1,400&display=swap" rel="stylesheet">
+</head>
+<body>
+
+    <nav class="navbar">
+        <div class="logo"><a href = "index.html">FEMMELY</a></div>
+        
+        <div class="nav-right">
+            <ul class="nav-links" id="navLinks">
+                <li><a href="index.html" class="nav-item">Home</a></li>
+                <li><a href="about-us.html" class="nav-item">About Us</a></li>
+                <li><a href="femmely-map.html" class="nav-item">Femmely Map</a></li>
+                <li><a href="haven.html" class="nav-item">Haven</a></li>
+                <li><a href="profile-help.html" class="nav-item">Help</a></li>
+            </ul>
+            <div class="nav-icons">
+                <i class="fa-solid fa-bars menu-icon" onclick="toggleMenu()"></i>
+                <a href="login.html" class="login-btn"><i class="fa-regular fa-circle-user"></i> Login</a>
+            </div>
+        </div>
+    </nav>
+
+    <header class="hero">
+        <div class="hero-bg">
+            <img src="pic/home.png" alt="Femmely Hero">
+            <div class="hero-overlay"></div>
+        </div>
+
+        <div class="hero-content">
+            <p class="welcome">Welcome to</p>
+            <h1>FEMMELY</h1>
+            <p class="tagline">Empowering Women Through<br>Safety & Community</p>
+            <div class="cta-buttons">
+                <a href="login.html" class="btn btn-primary">Join the Sisterhood</a>
+                <a href="femmely-map.html" class="btn btn-secondary">Browse Directory</a>
+            </div>
+        </div>
+    </header>
+
+    <section class="slider-container">
+        <div class="map-background"></div>
+
+        <div class="slider-card">
+            <div class="slides">
+                <div class="slide">
+                    <div class="slide-header">
+                        <i class="fa-solid fa-venus"></i>
+                        <h3>Women Safety Matters</h3>
+                    </div>
+                    <p class="slide-text">1 in 3 women globally experience physical or sexual violence in their lifetime.</p>
+                    <p class="slide-source">--WHO, 2021</p>
+                </div>
+                <div class="slide">
+                    <div class="slide-header">
+                        <i class="fa-solid fa-shield-heart"></i>
+                        <h3>The power of collective safety</h3>
+                    </div>
+                    <p class="slide-text">Peer-to-peer safety networks can reduce the "bystander effect," making people 40% more likely to intervene when they feel part of a connected community.</p>
+                    <p class="slide-source">--Psychology Today, 2022</p>
+                </div>
+                <div class="slide">
+                    <div class="slide-header">
+                        <i class="fa-solid fa-location-dot"></i>
+                        <h3>Environmental factors and perceived safety.</h3>
+                    </div>
+                    <p class="slide-text">"Perceived safety" is heavily influenced by "eyes on the street." High-activity areas are statistically safer than isolated, poorly lit shortcuts.</p>
+                    <p class="slide-source">--Urban Design Journal</p>
+                </div>
+                <div class="slide">
+                    <div class="slide-header">
+                        <i class="fa-solid fa-phone-volume"></i>
+                        <h3>The importance of rapid response.</h3>
+                    </div>
+                    <p class="slide-text">In an emergency, the first 60 seconds are the most critical. Having pre-set emergency contacts reduces response time by an average of 5 minutes.</p>
+                    <p class="slide-source">--National Safety Council</p>
+                </div>
+                <div class="slide">
+                    <div class="slide-header">
+                        <i class="fa-solid fa-user-shield"></i>
+                        <h3>The data gap in women's safety.</h3>
+                    </div>
+                    <p class="slide-text">Up to 80% of street harassment incidents go unreported to official authorities. Community reporting helps bridge this "dark figure" of crime statistics.</p>
+                    <p class="slide-source">--UN Women</p>
+                </div>
+            </div>
+
+            <div class="dots-container">
+                <span class="dot dot-1"></span>
+                <span class="dot dot-2"></span>
+                <span class="dot dot-3"></span>
+                <span class="dot dot-4"></span>
+                <span class="dot dot-5"></span>
+            </div>
+        </div>
+    </section>
+
+   <section class="what-we-do">
+        <div class="section-header">
+            <h2>WHAT WE DO</h2>
+            <p>Your Campus, Your Safety, Your Sisterhood.</p>
+        </div>
+
+        <div class="features-grid">
+            <a href="femmely-map.html" class="feature-link">
+                <div class="feature-item">
+                    <i class="fa-solid fa-location-dot feature-icon"></i>
+                    <h3>Crowdsourced Safety Map</h3>
+                    <ul>
+                        <li>Allows verified women to drop color specified legends corresponding to it's level of safeness.</li>
+                        <li>Displays subjective ratings for roads and hangouts based on lighting, crowd vibe, and security presence.</li>
+                    </ul>
+                </div>
+            </a>
+
+            <a href="haven-fem-care.html" class="feature-link">
+                <div class="feature-item">
+                    <i class="fa-solid fa-bag-shopping feature-icon"></i>
+                    <h3>Lifestyle Directory</h3>
+                    <ul>
+                        <li>A consolidated page for women's needs, categorized into Sanitary Care, Beauty Products, and Services.</li>
+                        <li>Helps users find specific items (e.g., "Where to buy napkins late at night").</li>
+                    </ul>
+                </div>
+            </a>
+
+            <a href="haven-fem-safe.html" class="feature-link">
+                <div class="feature-item">
+                    <i class="fa-solid fa-comments feature-icon"></i>
+                    <h3>The Sisterhood Forum</h3>
+                    <ul>
+                        <li>A restricted discussion board where verified users can seek advice or share experiences without fear of judgment.</li>
+                    </ul>
+                </div>
+            </a>
+        </div>
+    </section>
+
+    <section class="articles-section">
+        <div class="section-header">
+            <h2>FEATURED ARTICLES AND TIPS</h2>
+            <p>Knowledge as first line of defense.</p>
+        </div>
+
+        <div class="articles-grid">
+            <div class="article-card">
+                <img src="pic/wellness.png" alt="Mental Wellness">
+                <div class="card-overlay">
+                    <span>Mental Wellness</span>
+                    <a href="https://www.nytimes.com/search?query=mental+wellness">Read more</a>
+                </div>
+            </div>
+            <div class="article-card">
+                <img src="pic/law.png" alt="Legal & Rights">
+                <div class="card-overlay">
+                    <span>Legal & Rights</span>
+                    <a href="https://wlbonline.org/">Read more</a>
+                </div>
+            </div>
+            <div class="article-card">
+                <img src="pic/defense.png" alt="Self-defense 101">
+                <div class="card-overlay">
+                    <span>Self-defense 101</span>
+                    <a href="https://www.nytimes.com/topic/subject/selfdefense">Read more</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+<footer>
+        <div class="footer-logo">
+            <img src="pic/femlogo.png" alt="FEMMELY Logo"> FEMMELY
+        </div>
+
+        <p class="footer-tagline">Empowering Women Through Safety & Community</p>
+        
+        <div class="footer-nav">
+            <a href="index.html">Home</a>
+            <a href="about-us.html">About Us</a>
+            <a href="femmely-map.html">Femmely Map</a>
+            <a href="haven.html">Haven</a>
+            <a href="profile-help.html">Help</a>
+        </div>
+
+        <div class="footer-socials">
+            <a href="https://www.instagram.com" class="social-icon">
+                <img src="pic/instagram.png" alt="Instagram">
+            </a>
+            <a href="https://www.facebook.com" class="social-icon">
+                <img src="pic/facebook.png" alt="Facebook">
+            </a>
+            <a href="https://www.google.com" class="social-icon">
+                <img src="pic/google.png" alt="Google">
+            </a>
+            <a href="https://www.linkedin.com" class="social-icon">
+                <img src="pic/linkedin.png" alt="LinkedIn">
+            </a>
+        </div>
+
+        <p class="copyright">FEMMELY ©2026 All rights reserved</p>
+    </footer>
+
+    <script src="json/index.js">
+    </script>
+
+</body>
+</html>

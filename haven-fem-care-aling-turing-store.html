@@ -1,0 +1,315 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>FEMMELY</title>
+    <link rel="stylesheet" href= "style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,300;0,400;0,600;0,700;0,800;1,400&display=swap" rel="stylesheet">
+</head>
+
+<body>
+    <nav class="navbar">
+        <div class="logo"><a href = "index.html">FEMMELY</a></div>
+        
+        <div class="nav-right">
+            <ul class="nav-links" id="navLinks">
+                <li><a href="index.html" class="nav-item">Home</a></li>
+                <li><a href="about-us.html" class="nav-item">About Us</a></li>
+                <li><a href="femmely-map.html" class="nav-item">Femmely Map</a></li>
+                <li><a href="haven.html" class="nav-item active">Haven</a></li>
+                <li><a href="help.html" class="nav-item">Help</a></li>
+            </ul>
+            <div class="nav-icons">
+                <i class="fa-solid fa-bars menu-icon" onclick="toggleMenu()"></i>
+                <a href="login.html" class="login-btn"><i class="fa-regular fa-circle-user"></i> Login</a>
+            </div>
+        </div>
+    </nav>
+
+    <div class = "haven-header">
+                <a href = "haven.html" class="haven-title">Haven</a>
+                <div class = "haven-search-container">
+                <form class = "haven-search-form" action="/search" method="get">
+                    <input class = "haven-search-input" type="text" id="search-input" name="q" placeholder="Search for entries...">
+                    <div>
+                        <button class = "haven-search-btn" type="submit"><i class="fa-solid fa-magnifying-glass"></i></button>
+                        <button class = "haven-search-btn" type="reset"><i class="fa-solid fa-x"></i></button>
+                    </div>
+                </form>
+                </div>
+    </div>
+
+    <div class = "haven-body">
+        <div class = "haven-select-section">
+            <ul>
+                <li class = "haven-select-btn"><a href="haven.html">Home</a></li>
+                <li class = "haven-select-btn "><a href="haven-fem-safe.html">Fem-safe</a></li>
+                <li class = "haven-select-btn active"><a href="haven-fem-care.html">Fem-care</a></li>
+                <li class = "haven-select-btn locked"><a class = "locked-link" href="#">Explore</a></li>
+            </ul>
+        </div>
+        <div class = "haven-scroll-bar haven-entry-section fc">
+            <div class = "haven-entry-header-container-fc">
+                <img class = "haven-entry-header-pic" src = "pic/panama-street.jpg"></img>
+                <div class = "haven-entry-header-text">
+                    <p class ="haven-entry-header-text-location">Aling Turing's Store, Okra Street, Brgy. Sta. Cruz, Makati</p> 
+                    <p class ="haven-entry-header-text-entry-count">23 entries</p>
+                </div>
+            </div>
+            <div class = "haven-post-card fc">
+                    <form class = "haven-post-content" id="post-form" action="/submit-endpoint" method="POST">
+                        <input class="haven-post-input haven-t1" type="text" id="post-input" name="post" placeholder="Share your story..." required>
+                        <button type="submit" class="haven-entry-btn fa-regular fa-pen-to-square"></button>
+                    </form>
+            </div>
+
+            <div class = "haven-entry-card fc">
+                <div class = "haven-entry-content">
+                    <div class = "haven-entry-content-1">
+                        <div>
+                            <ul><li class = "fa-solid fa-circle-user entry"></li>
+                            <span class = "haven-t1">f/username</span></ul>
+                        </div>
+                        <span class = "haven-t1">12:23AM 02/20/26</span>
+                    </div>
+                    <div class = "haven-entry-content-2">
+                        <p class = "haven-t2">I love walkable cities</p>
+                        <p class = "haven-t1">there's just something about shdjashd jsah djashdjha sjdhasj dhjashdjk askd sd...</p>
+                    </div>
+                    <div class = "haven-entry-content-3">
+                        <div></div>
+                        <span  class = "haven-entry-btn-container">
+                            <div>
+                                <button class="haven-entry-btn" aria-label="Like this post">
+                                    <i class="fa-regular fa-heart"></i>
+                                    <span class = "haven-t3">2.3k</span>
+                                </button>
+                            </div>
+                            <div>
+                                <button class="haven-entry-btn" aria-label="Comment on this post">
+                                    <i class="fa-regular fa-comment"></i>
+                                    <span class="haven-t3">22</span>
+                                </button>
+                            </div>
+                            <div>
+                                <button class="haven-entry-btn" aria-label="Retweet this post">
+                                    <i class="fa-solid fa-retweet"></i>
+                                    <span class="haven-t3">32</span>
+                                </button>
+                            </div>
+                        </span>
+                    </div>
+                </div> 
+            </div>
+            <div class = "haven-entry-card fc">
+                <div class = "haven-entry-content">
+                    <div class = "haven-entry-content-1">
+                        <div>
+                            <ul><li class = "fa-solid fa-circle-user entry"></li>
+                            <span class = "haven-t1">f/username</span></ul>
+                        </div>
+                        <span class = "haven-t1">12:23AM 02/20/26</span>
+                    </div>
+                    <div class = "haven-entry-content-2">
+                        <p class = "haven-t2">I love walkable cities</p>
+                        <p class = "haven-t1">there's just something about shdjashd jsah djashdjha sjdhasj dhjashdjk askd sd...</p>
+                    </div>
+                    <div class = "haven-entry-content-3">
+                        <div></div>
+                        <span  class = "haven-entry-btn-container">
+                            <div>
+                                <button class="haven-entry-btn" aria-label="Like this post">
+                                    <i class="fa-regular fa-heart"></i>
+                                    <span class = "haven-t3">2.3k</span>
+                                </button>
+                            </div>
+                            <div>
+                                <button class="haven-entry-btn" aria-label="Comment on this post">
+                                    <i class="fa-regular fa-comment"></i>
+                                    <span class="haven-t3">22</span>
+                                </button>
+                            </div>
+                            <div>
+                                <button class="haven-entry-btn" aria-label="Retweet this post">
+                                    <i class="fa-solid fa-retweet"></i>
+                                    <span class="haven-t3">32</span>
+                                </button>
+                            </div>
+                        </span>
+                    </div>
+                </div> 
+            </div>
+            <div class = "haven-entry-card fc">
+                <div class = "haven-entry-content">
+                    <div class = "haven-entry-content-1">
+                        <div>
+                            <ul><li class = "fa-solid fa-circle-user entry"></li>
+                            <span class = "haven-t1">f/username</span></ul>
+                        </div>
+                        <span class = "haven-t1">12:23AM 02/20/26</span>
+                    </div>
+                    <div class = "haven-entry-content-2">
+                        <p class = "haven-t2">I love walkable cities</p>
+                        <p class = "haven-t1">there's just something about shdjashd jsah djashdjha sjdhasj dhjashdjk askd sd...</p>
+                    </div>
+                    <div class = "haven-entry-content-3">
+                        <div></div>
+                        <span  class = "haven-entry-btn-container">
+                            <div>
+                                <button class="haven-entry-btn" aria-label="Like this post">
+                                    <i class="fa-regular fa-heart"></i>
+                                    <span class = "haven-t3">2.3k</span>
+                                </button>
+                            </div>
+                            <div>
+                                <button class="haven-entry-btn" aria-label="Comment on this post">
+                                    <i class="fa-regular fa-comment"></i>
+                                    <span class="haven-t3">22</span>
+                                </button>
+                            </div>
+                            <div>
+                                <button class="haven-entry-btn" aria-label="Retweet this post">
+                                    <i class="fa-solid fa-retweet"></i>
+                                    <span class="haven-t3">32</span>
+                                </button>
+                            </div>
+                        </span>
+                    </div>
+                </div> 
+            </div>
+            <div class = "haven-entry-card fc">
+                <div class = "haven-entry-content">
+                    <div class = "haven-entry-content-1">
+                        <div>
+                            <ul><li class = "fa-solid fa-circle-user entry"></li>
+                            <span class = "haven-t1">f/username</span></ul>
+                        </div>
+                        <span class = "haven-t1">12:23AM 02/20/26</span>
+                    </div>
+                    <div class = "haven-entry-content-2">
+                        <p class = "haven-t2">I love walkable cities</p>
+                        <p class = "haven-t1">there's just something about shdjashd jsah djashdjha sjdhasj dhjashdjk askd sd...</p>
+                    </div>
+                    <div class = "haven-entry-content-3">
+                        <div></div>
+                        <span  class = "haven-entry-btn-container">
+                            <div>
+                                <button class="haven-entry-btn" aria-label="Like this post">
+                                    <i class="fa-regular fa-heart"></i>
+                                    <span class = "haven-t3">2.3k</span>
+                                </button>
+                            </div>
+                            <div>
+                                <button class="haven-entry-btn" aria-label="Comment on this post">
+                                    <i class="fa-regular fa-comment"></i>
+                                    <span class="haven-t3">22</span>
+                                </button>
+                            </div>
+                            <div>
+                                <button class="haven-entry-btn" aria-label="Retweet this post">
+                                    <i class="fa-solid fa-retweet"></i>
+                                    <span class="haven-t3">32</span>
+                                </button>
+                            </div>
+                        </span>
+                    </div>
+                </div> 
+            </div>
+            <div class = "haven-entry-card fc">
+                <div class = "haven-entry-content">
+                    <div class = "haven-entry-content-1">
+                        <div>
+                            <ul><li class = "fa-solid fa-circle-user entry"></li>
+                            <span class = "haven-t1">f/username</span></ul>
+                        </div>
+                        <span class = "haven-t1">12:23AM 02/20/26</span>
+                    </div>
+                    <div class = "haven-entry-content-2">
+                        <p class = "haven-t2">I love walkable cities</p>
+                        <p class = "haven-t1">there's just something about shdjashd jsah djashdjha sjdhasj dhjashdjk askd sd...</p>
+                    </div>
+                    <div class = "haven-entry-content-3">
+                        <div></div>
+                        <span  class = "haven-entry-btn-container">
+                            <div>
+                                <button class="haven-entry-btn" aria-label="Like this post">
+                                    <i class="fa-regular fa-heart"></i>
+                                    <span class = "haven-t3">2.3k</span>
+                                </button>
+                            </div>
+                            <div>
+                                <button class="haven-entry-btn" aria-label="Comment on this post">
+                                    <i class="fa-regular fa-comment"></i>
+                                    <span class="haven-t3">22</span>
+                                </button>
+                            </div>
+                            <div>
+                                <button class="haven-entry-btn" aria-label="Retweet this post">
+                                    <i class="fa-solid fa-retweet"></i>
+                                    <span class="haven-t3">32</span>
+                                </button>
+                            </div>
+                        </span>
+                    </div>
+                </div> 
+            </div>
+        </div>
+
+
+        <!-- CHANGES marion -->
+        <div class = "haven-oracle-section">
+            <h4 class = "haven-oracle-section-title">Oracle</h4>
+            <div class = "haven-oracle-card">
+                <div class="oracle-header">
+                    <h4 class="oracle-title">Trusting Your Instincts</h4><span class="oracle-tag">Wellness</span>
+                </div>
+                <p class="oracle-preview">A deep dive into recent behavioral studies on self-awareness and self-deception, and why trusting your gut is your best defense.</p>
+                <div class="oracle-footer">
+                    <a href="https://womens-safety.com/blog/trust-your-intuition-a-womans-most-useful-ally-in-personal-safety/" class="oracle-link">Read more <i class="fa-solid fa-arrow-right"></i></a>
+                </div>
+            </div>
+                    <div class="oracle-footer-logo">
+                        <img src="pic/femlogo.png" alt="FEMMELY Logo"> FEMMELY
+                    </div>
+        <div class="oracle-footer">
+        <p class="oracle-footer-tagline">Empowering Women Through Safety & Community</p>
+        
+        <div class="oracle-footer-nav">
+            <a href="index.html">Home</a>
+            <a href="about-us.html">About Us</a>
+            <a href="femmely-map.html">Femmely Map</a>
+            <a href="haven.html">Haven</a>
+            <a href="profile-help.html">Help</a>
+        </div>
+
+        <div class="oracle-footer-socials">
+            <a href="#" class="oracle-social-icon">
+                <img src="pic/instagram.png" alt="Instagram">
+            </a>
+            <a href="#" class="oracle-social-icon">
+                <img src="pic/facebook.png" alt="Facebook">
+            </a>
+            <a href="#" class="oracle-social-icon">
+                <img src="pic/google.png" alt="Google">
+            </a>
+            <a href="#" class="oracle-social-icon">
+                <img src="pic/linkedin.png" alt="LinkedIn">
+            </a>
+        </div>
+
+        <p class="oracle-footer-copyright">FEMMELY ©2026 All rights reserved</p>
+        
+        </div>
+        </div>  
+            
+    </div>
+
+    <!-- scripts -->
+    <script src="json/oracle.js"></script>
+
+</body>
+</html>
+<!-- changes marion end-->

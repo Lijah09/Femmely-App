@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+
+<html lang="en">
+
+<head>
+
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>MAP Concept</title>
+
+    <link rel="stylesheet" href="map.css">
+    <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css">
+    <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"></script>
+
+</head>
+<body>
+
+    <div class="parent">
+        <div class="div1" id="map"></div>
+
+        <div class="div3">
+
+            <form id="FemSafeForm">
+
+                <label for="location">Enter Location:</label>
+                <input type="text" name="location" id="location">
+
+                <br><br>
+
+                <div class="ratingContainer">
+                    <label for="rating">Give Rating:</label>
+
+                    <input type="radio" name="star1" id="star1" class="rating" value="1">
+                    <label for="star1">☆</label>
+
+                    <input type="radio" name="star2" id="star2" class="rating" value="2">
+                    <label for="star2">☆</label>
+
+                    <input type="radio" name="star3" id="star3" class="rating" value="3">
+                    <label for="star3">☆</label>
+
+                    <input type="radio" name="star4" id="star4" class="rating" value="4">
+                    <label for="star4">☆</label>
+
+                    <input type="radio" name="star5" id="star5" class="rating" value="5">
+                    <label for="star5">☆</label>
+
+                </div>
+
+                <br><br>
+
+                <label for="comment">Comments:</label>
+                <textarea name="comment" id="comment" rows="4" cols="50"></textarea>
+                
+                <br><br>
+
+                <input type="submit" value="Submit" id="submit">
+                
+
+            </form>
+            
+        
+        </div>
+    </div>
+    
+    <script src="map.js"></script>
+
+</body>
+</html>

@@ -1,0 +1,182 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>FEMMELY | Fem-Safe Map </title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,300;0,400;0,600;0,700;0,800;1,400&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css">
+    <link rel="stylesheet" href="style.css">
+    <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"></script>
+</head>
+
+<body>
+    <nav class="navbar">
+        <div class="logo"><a href="index.html">FEMMELY</a></div>
+        
+        <div class="nav-right">
+            <ul class="nav-links" id="navLinks">
+                <li><a href="index.html" class="nav-item">Home</a></li>
+                <li><a href="about-us.html" class="nav-item">About Us</a></li>
+                <li><a href="femmely-map.html" class="nav-item active">Femmely Map</a></li>
+                <li><a href="haven.html" class="nav-item">Haven</a></li>
+                <li><a href="profile-help.html" class="nav-item">Help</a></li>
+            </ul>
+            <div class="nav-icons">
+                <i class="fa-solid fa-bars menu-icon" onclick="toggleMenu()"></i>
+                <a href="login.html" class="login-btn"><i class="fa-regular fa-circle-user"></i> Login</a>
+            </div>
+        </div>
+    </nav>
+    <div class = "fm-body">
+        <div class = "marker-middle">.</div>
+        <div class = "fm-card" id = "fmCard">
+            
+            <div class = "fm-header">
+                <h1 class = "fm-title" id = "fmTitle">Femmely Map</h1>
+            </div>
+            <div class="femmely-map-container">
+                <div class="fm-map" id="map"></div>
+                <div class="map-overlay-search">
+                    <div class="fm-search-container">
+                        <form class="fm-search-form" action="/search" method="get">
+                            <input class="fm-search-input" type="text" id="search-input" name="q" placeholder="Search fem-safe areas...">
+                            <div class ="fm-search-buttons">
+                                <button class="fm-search-btn" type="submit"><i class="fa-solid fa-magnifying-glass"></i></button>
+                                <button class="fm-search-btn" type="reset"><i class="fa-solid fa-x"></i></button>
+                            </div>
+                        </form>
+                    </div>
+                </div>
+
+                <div class="map-overlay-info" id = "mapTip">
+                    <i class="fa-solid fa-circle-exclamation info-icon"></i>
+                    <p>Select a street to give it a fem-safe rating.</p>
+                </div>
+
+                <div class="map-overlay-legend">
+                    <h4 class="legend-title">Legend</h4>
+                    <ul class="legend-list">
+                        <li><span class="legend-color" style="background-color: #ff66c4;"></span> Fem-safe</li>
+                        <li><span class="legend-color" style="background-color: #d896ff;"></span> Generally Safe</li>
+                        <li><span class="legend-color" style="background-color: #fff9a6;"></span> Mixed Experiences</li>
+                        <li><span class="legend-color" style="background-color: #8aff8a;"></span> Frequent Concerns</li>
+                        <li><span class="legend-color" style="background-color: #ffb38a;"></span> High-Risk Area</li>
+                        <li><span class="legend-color" style="background-color: #ffffff;"></span> Selected</li>
+                    </ul>
+                </div>
+                <div class="streetDashboard form-scroll-bar" id="streetDashboard">
+                <div class="streetDashboard-header">
+                    <p class="streetDashboard-street" id="sd-street"></p>
+                    <p class="streetDashboard-city" id="sd-city"></p>
+                </div>
+                <div class="streetDashboard-stats" id = "streetDashboardStats">
+                    <i class="fa-solid fa-heart-pulse"></i><span>Statistics under construction...</span>
+                </div>
+                <div class="streetDashboard-rating" id = "streetDashboardRating">
+                    <button class="sd-form-btn" id="sdFormBtn">Submit a fem-rating</button>
+                </div>
+                <div class="streetDashboard-comments" id = "streetDashboardComments">
+                    <div class = "sd-comment-none" id = "sdCommentNone">Comments will appear here... Hopefully.</div>
+                <div class = "sd-comment hidden" id = "sdComment1">
+                    <div class = "sd-comment-header"><div class = "sd-comment-name" id = "sd-comment-name">Name</div> | <div class = "sd-comment-rating" id = "sd-comment-rating">Rated Fem-safe</div></div>
+                    <p class = "sd-comment-content" id = "sd-comment-content">content contenttenennenen content contentn </p>
+                </div>
+                </div>  
+                <div class = "streetDashboard-form " >
+                    <form id="FemSafeForm">
+                        <br><br>
+
+                        <div class="rating-section">
+                            <div class="slider-header">
+                                <label>Safety Rating</label>
+                                <span id="rating-text">Slide to rate...</span>
+                            </div>
+                            
+                            <div class="heart-container">
+                                <i class="fa-solid fa-heart" id="rating-heart"></i>
+                                <input type="range" min="1" max="5" step="1" value="1" id="safety-slider" class="femsafe-slider">
+                            </div>
+                            
+                            <div class="slider-labels">
+                                <span>High-Risk</span>
+                                <span>Fem-safe</span>
+                            </div>
+                        </div>
+
+                        <br><br>
+                        <div class="helpme" style = "display:flex; flex-direction: column; gap: 0.5rem; ">
+                        <input type="hidden" id="fs-location" name="fs-location">
+                        <label for="fs-comment">Comments:</label>
+                        <textarea name="fs-comment" id="fs-comment" rows="4" cols="50"></textarea>
+                        </div>
+                        <br><br>
+                        <div style="display: flex; justify-content: space-between;">
+                            <button class="fs-cancel-btn" id="fsCancelBtn">Cancel</button>
+                            <button class="fs-submit-btn" id="fsSubmitBtn">Submit</button>
+                        </div>
+
+                    </form>
+                </div>
+                </div>
+            </div>
+            <div class = "fm-footer">
+                <div class="mini-mode-toggle">
+                    <div class = "mini-color-pill" id = "miniColorPill">
+                        <span class="mini-mode-text-safe mini-safe-text" onclick="selectMode('safe')">FS</span>
+                        <div class="mini-toggle-dot" id="mini-slidingDot"></div>
+                        <span class="mini-mode-text-care mini-care-text" onclick="selectMode('care')">FC</span>
+                    </div>
+                </div>
+                <button class = "fullscreen-btn"><i class="fas fa-expand"></i></button>
+            </div>
+        </div>
+    </div>
+    
+    <footer>
+        <div class="footer-logo">
+            <img src="pic/femlogo.png" alt="FEMMELY Logo"> FEMMELY
+        </div>
+
+        <p class="footer-tagline">Empowering Women Through Safety & Community</p>
+        
+        <div class="footer-nav">
+            <a href="index.html">Home</a>
+            <a href="about-us.html">About Us</a>
+            <a href="femmely-map.html">Femmely Map</a>
+            <a href="haven.html">Haven</a>
+            <a href="profile-help.html">Help</a>
+        </div>
+
+        <div class="footer-socials">
+            <a href="#" class="social-icon">
+                <img src="pic/instagram.png" alt="Instagram">
+            </a>
+            <a href="#" class="social-icon">
+                <img src="pic/facebook.png" alt="Facebook">
+            </a>
+            <a href="#" class="social-icon">
+                <img src="pic/google.png" alt="Google">
+            </a>
+            <a href="#" class="social-icon">
+                <img src="pic/linkedin.png" alt="LinkedIn">
+            </a>
+        </div>
+
+        <p class="copyright">FEMMELY ©2026 All rights reserved</p>
+    </footer>
+    
+    
+</body>
+
+<!-- <script src="json/access.js"></script>
+<script>
+    requireLogIn();
+    requireVerification();
+</script> -->
+<script src="json/femmely-map-fem-safe.js"></script>
+
+<script src = "json/femmely-map.js"></script>
+</html>

@@ -1,0 +1,97 @@
+
+* {
+
+    padding: 0;
+    margin: 0;
+
+}
+
+.parent {
+    display: flex;             
+    justify-content: center;   
+    align-items: flex-start;   
+    gap: 40px;                 
+    padding: 50px;             
+    background-color: #f0f0f0; 
+    min-height: 100vh;         
+}
+
+.div1 {
+    flex: 0 0 600px;           
+    height: 500px;             
+    border: 3px solid #000;
+    border-radius: 20px;
+    overflow: hidden;
+}
+
+.div3 {
+    flex: 0 0 400px;           
+    background-color: #00ead3; 
+    padding: 30px;
+    border-radius: 20px;
+    border: 3px solid #000;
+}
+
+
+form {
+    background-color: aqua;
+    padding: 30px;
+    margin-right: 20px ;
+    border-radius: 20px;
+    height: 75%;
+}
+
+#location, #comment { padding: 10px; border-radius: 10px;}
+#location { max-width: 100%; }
+
+textarea { max-width: 95%; }
+
+.ratingContainer {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+
+}
+
+#submit {
+    padding: 10px;
+    border-radius: 15px;
+
+}
+
+label, #submit { font-weight: bolder; }
+
+#map {
+    height: 450px;
+    width: 100%;
+    border: 3px solid #000000; /* Bold border like your drawing */
+    border-radius: 20px;       /* Match the rounded look of the sidebar */
+    overflow: hidden;          /* Keeps the map tiles inside the rounded corners */
+}
+
+
+/* The main box of the popup */
+.leaflet-popup-content-wrapper {
+    background: #ffffff;
+    color: #000000;
+    border: 3px solid #000000; /* Bold outline from your sketch */
+    border-radius: 15px;       /* Rounded corners */
+    padding: 5px;
+    box-shadow: 5px 5px 0px rgba(0,0,0,0.1); /* Subtle "sticker" depth */
+}
+
+/* The little triangle "tail" at the bottom */
+.leaflet-popup-tip {
+    background: #000000; 
+    width: 15px;
+    height: 15px;
+}
+
+/* Styling the text inside the bubble to match your labels */
+.leaflet-popup-content {
+    font-family: 'Comic Sans MS', 'Arial', sans-serif; /* Optional: for that sketch feel */
+    font-weight: bold;
+    font-size: 14px;
+    line-height: 1.6;
+}
+

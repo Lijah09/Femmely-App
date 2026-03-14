@@ -1,0 +1,221 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>FEMMELY - Login/Sign up</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,300;0,400;0,600;0,700;0,800;1,400&display=swap" rel="stylesheet">
+    <script src="https://cdn.jsdelivr.net/npm/@emailjs/browser@4/dist/email.min.js"></script>
+    <script> emailjs.init("yHzOtBHlHANmVPrp7"); </script>
+</head>
+<body>
+
+    <nav class="navbar">
+        <div class="logo"><a href = "index.html">FEMMELY</a></div>
+        
+        <div class="nav-right">
+            <ul class="nav-links" id="navLinks">
+                <li><a href="index.html" class="nav-item">Home</a></li>
+                <li><a href="about-us.html" class="nav-item">About Us</a></li>
+                <li><a href="femmely-map.html" class="nav-item">Femmely Map</a></li>
+                <li><a href="haven.html" class="nav-item">Haven</a></li>
+                <li><a href="profile-help.html" class="nav-item">Help</a></li>
+            </ul>
+            <div class="nav-icons">
+                <i class="fa-solid fa-bars menu-icon" onclick="toggleMenu()"></i>
+                <a href="login.html" class="login-btn"><i class="fa-regular fa-circle-user"></i> Login</a>
+            </div>
+        </div>
+    </nav>
+
+    <section class="login-section">
+        <div class="map-background"></div>
+        
+        <div class="login-container">
+            <div class="login-tabs">
+                <button id="btn-register" class="tab-btn active" onclick="switchTab('register')">Register</button>
+                <button id="btn-login" class="tab-btn" onclick="switchTab('login')">Login</button>
+            </div>
+
+            <div class="login-form">
+                <div class="input-row">
+                    <div class="input-group">
+                        <label>Email</label>
+                        <input type="email" placeholder="name@gmail.com">
+                    </div>
+                    <div class="input-group">
+                        <label>Password</label>
+                        <input type="password" placeholder="••••••">
+                    </div>
+                </div>
+
+                <div id="content-register" class="tab-content active">
+                    <div class="upload-box" id="drop-zone" onclick="document.getElementById('id-upload').click()">
+                        <input type="file" id="id-upload" accept="image/png, image/jpeg" hidden onchange="handleFiles(this.files)">
+    
+                    <div id="upload-content">
+                        <img src="pic/id.png" alt="ID Verification" class="id-icon" onerror="this.style.display='none'">
+                        <h4>Upload ID for Verification</h4>
+                        <p class="subtitle">Click to browse or drag & drop (PNG, JPG only)</p>
+                        <p class="secure-note"><i class="fa-solid fa-lock" style="color: #f59e0b;"></i> Secure Upload: IDs are encrypted.</p>
+                    </div>
+
+                        <div id="preview-section" style="display: none;">
+                            <i class="fa-solid fa-circle-check" style="color: #4ade80; font-size: 2rem; margin-bottom: 10px;"></i>
+                            <p id="file-name" style="font-weight: 600; margin-bottom: 10px; color: var(--pink-light);"></p>
+                            <img id="image-preview" src="" alt="ID Preview" style="max-height: 100px; border-radius: 8px; margin-bottom: 10px; display: block; margin-left: auto; margin-right: auto;">
+                            <p class="remove-btn" onclick="resetUpload(event)">Remove file</p>
+                        </div>
+                    </div>
+                    
+                    <button id="register-submit" class="btn btn-primary login-submit">Request Clearance</button>
+                    
+                    <p class="login-disclaimer">
+                        To ensure the safety of the sisterhood, all IDs are manually reviewed. Please allow up to 24 hours.<br>
+                        For the meantime, you may use Guest Mode.
+                    </p>
+                </div>
+
+                <div id="content-login" class="tab-content">
+                    <div class="permissions-box">
+                        <h4>Guest Access Permissions:</h4>
+                        <ul class="permissions-list">
+                            <li><i class="fa-solid fa-square-check" style="color: #4ade80;"></i> View Public Safe Zones (Green Pins)</li>
+                            <li><i class="fa-solid fa-square-check" style="color: #4ade80;"></i> Browse Lifestyle Directory</li>
+                            <li><i class="fa-solid fa-square-xmark" style="color: #f87171;"></i> No Access to Sisterhood Forum</li>
+                            <li><i class="fa-solid fa-square-xmark" style="color: #f87171;"></i> Cannot View Red Danger Pins</li>
+                        </ul>
+                    </div>
+                    
+                    <button id="login-submit" class="btn btn-primary login-submit">Login</button>
+                    
+                    <p class="login-disclaimer">
+                        Guest mode restricts sensitive safety data to protect the community.
+                    </p>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    <footer>
+        <div class="footer-logo">
+            <img src="pic/femlogo.png" alt="FEMMELY Logo"> FEMMELY
+        </div>
+        <p class="footer-tagline">Empowering Women Through Safety & Community</p>
+        
+        <div class="footer-nav">
+            <a href="index.html">Home</a>
+            <a href="about-us.html">About Us</a>
+            <a href="femmely-map.html">Femmely Map</a>
+            <a href="haven.html">Haven</a>
+            <a href="profile-help.html">Help</a>
+        </div>
+
+        <div class="footer-socials">
+            <a href="#" class="social-icon"><img src="pic/instagram.png" alt="Instagram"></a>
+            <a href="#" class="social-icon"><img src="pic/facebook.png" alt="Facebook"></a>
+            <a href="#" class="social-icon"><img src="pic/google.png" alt="Google"></a>
+            <a href="#" class="social-icon"><img src="pic/linkedin.png" alt="LinkedIn"></a>
+        </div>
+
+        <p class="copyright">FEMMELY ©2026 All rights reserved</p>
+    </footer>
+
+    <script> 
+
+        let uploadedIDBase64 = "";
+
+        function toggleMenu() {
+            var menu = document.getElementById("navLinks");
+            menu.classList.toggle("show-menu");
+        }
+
+        function switchTab(tab) {
+        document.getElementById('btn-register').classList.remove('active');
+        document.getElementById('btn-login').classList.remove('active');
+        document.getElementById('content-register').classList.remove('active');
+        document.getElementById('content-login').classList.remove('active');
+
+        if (tab === 'register') {
+            document.getElementById('btn-register').classList.add('active');
+            document.getElementById('content-register').classList.add('active');
+        } 
+        
+        else {
+            document.getElementById('btn-login').classList.add('active');
+            document.getElementById('content-login').classList.add('active');
+        }
+        }
+
+        const dropZone = document.getElementById('drop-zone');
+        ['dragenter', 'dragover', 'dragleave', 'drop'].forEach(eventName => {
+            dropZone.addEventListener(eventName, preventDefaults, false);
+            document.body.addEventListener(eventName, preventDefaults, false);
+        });
+
+        function preventDefaults(e) {
+            e.preventDefault();
+            e.stopPropagation();
+        }
+
+        ['dragenter', 'dragover'].forEach(eventName => {
+            dropZone.addEventListener(eventName, highlight, false);
+        });
+
+        ['dragleave', 'drop'].forEach(eventName => {
+            dropZone.addEventListener(eventName, unhighlight, false);
+        });
+
+        function highlight(e) { dropZone.classList.add('dragover'); }
+        function unhighlight(e) { dropZone.classList.remove('dragover'); }
+
+        dropZone.addEventListener('drop', handleDrop, false);
+
+        function handleDrop(e) {
+            let dt = e.dataTransfer;
+            let files = dt.files;
+            handleFiles(files);
+        }
+
+    // 2. UPDATED HANDLEFILES FUNCTION
+        function handleFiles(files) {
+            const file = files[0];
+            const validTypes = ['image/jpeg', 'image/png', 'image/jpg'];
+
+            if (file && validTypes.includes(file.type)) {
+                document.getElementById('upload-content').style.display = 'none';
+                document.getElementById('preview-section').style.display = 'block';
+                document.getElementById('file-name').innerText = file.name;
+                
+                const reader = new FileReader();
+                reader.onload = function(e) {
+                    document.getElementById('image-preview').src = e.target.result;
+                    // SAVE TO OUR GLOBAL VARIABLE
+                    uploadedIDBase64 = e.target.result; 
+                }
+                reader.readAsDataURL(file);
+            } else {
+                alert("Invalid file format. Please upload a PNG or JPEG image only.");
+                document.getElementById('id-upload').value = ''; 
+            }
+        }
+
+    // 3. UPDATED RESET FUNCTION
+        function resetUpload(e) {
+            e.stopPropagation(); 
+            document.getElementById('id-upload').value = '';
+            document.getElementById('upload-content').style.display = 'block';
+            document.getElementById('preview-section').style.display = 'none';
+            document.getElementById('image-preview').src = '';
+            uploadedIDBase64 = ""; // CLEAR THE DATA
+        }
+
+    </script>
+
+    <!-- scripts -->
+    <script src="json/login.js"></script>
+</body>
+</html>

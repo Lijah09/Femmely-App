@@ -1,0 +1,225 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>FEMMELY ADMIN - Verification Queue</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,300;0,400;0,600;0,700;0,800;1,400&display=swap" rel="stylesheet">
+</head>
+<body>
+
+    <nav class="admin-nav">
+        <div class="admin-logo">FEMMELY <span>ADMIN</span></div>
+        <div class="nav-right-actions">
+            <i class="fa-solid fa-bars" style="cursor: pointer;"></i>
+            <div class="admin-profile">
+                <i class="fa-regular fa-circle-user" style="font-size: 1.5rem;"></i>
+                Admin
+            </div>
+        </div>
+    </nav>
+
+    <div class="admin-wrapper">
+        <div class="admin-dashboard">
+            
+            <div class="sidebar-col">
+                <div class="admin-card list-section">
+                    <h3>Pending</h3>
+                    <div class="scrollable-list" id="pending-list">
+                        </div>
+                </div>
+
+                <div class="admin-card list-section">
+                    <h3>Approved</h3>
+                    <div class="scrollable-list" id="approved-list">
+                        <div class="list-item">Spongeberry</div>
+                        <div class="list-item">Patricia Star</div>
+                        <div class="list-item">Krusty Kim</div>
+                        <div class="list-item">Squidmary</div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="main-col">
+                
+                <div class="admin-card welcome-banner">
+                    <div class="welcome-text">
+                        <h2>Mother is mothering the queue 👑</h2>
+                        <p>Gatekeeping the sisterhood from weirdos.</p>
+                    </div>
+                    <img src="pic/admin.png" alt="Admin Graphic" class="welcome-illustration" onerror="this.style.display='none'">
+                </div>
+
+                <div class="admin-card review-layout">
+                    
+                    <div class="id-container">
+                        <div class="id-dashed-box">
+                            <img id="display-image" src="pic/id.png" alt="Uploaded ID Document">
+                        </div>
+                        <div class="zoom-controls">
+                            <i class="fa-solid fa-minus" onclick="zoomImage('out')"></i>
+                            <i class="fa-solid fa-magnifying-glass" onclick="zoomImage('reset')"></i>
+                            <i class="fa-solid fa-plus" onclick="zoomImage('in')"></i>
+                        </div>
+                    </div>
+
+                    <div class="details-container">
+                        <div class="review-header-group">
+                            <h2>Review Clearance</h2>
+                            <div id="display-time" class="submitted-time">Submitted --</div>
+                        </div>
+
+                        <div class="data-field">
+                            <label>Name</label>
+                            <div id="display-name" class="read-only-text">--</div>
+                        </div>
+
+                        <div class="data-field">
+                            <label>Email Address</label>
+                            <div id="display-email" class="read-only-text">--</div>
+                        </div>
+
+                        <div class="action-section">
+                            <label>Clearance Action</label>
+                            <div class="button-row">
+                                <button class="btn-action btn-approve" onclick="processUser('approve')">Approve Clearance</button>
+                                <button class="btn-action btn-reject" onclick="processUser('reject')">Reject & Delete</button>
+                            </div>
+                        </div>
+
+                        <div class="logout-link" onclick="window.location.href='login.html'">Admin log out</div>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </div>
+
+    <script>
+        // remove / if you want to reset the queue for testing
+        // localStorage.removeItem('femmelyAdminQueue'); 
+
+        let queue = JSON.parse(localStorage.getItem('femmelyAdminQueue'));
+        let currentIndex = 0; 
+
+        if (!queue || queue.length === 0) {
+            queue = [
+                { name: "Arcelijah Yu", email: "arce.yu@gmail.com", time: "2 hours ago", image: null },
+                { name: "Maria Clara", email: "mclara@mymail.mapua.edu.ph", time: "5 hours ago", image: null },
+                { name: "Nobara Kugisaki", email: "nobara.kugi@yahoo.com", time: "1 day ago", image: null },
+                { name: "Maki Zenin", email: "maki.zen@yahoo.com", time: "1 day ago", image: null }
+            ];
+            localStorage.setItem('femmelyAdminQueue', JSON.stringify(queue));
+        }
+
+        function loadQueueList() {
+            const pendingListHTML = document.getElementById('pending-list');
+            pendingListHTML.innerHTML = ''; 
+            
+            document.getElementById('display-image').style.transform = 'scale(1)';
+            currentZoom = 1;
+
+            if (queue.length === 0) {
+                pendingListHTML.innerHTML = '<div class="list-item" style="color:#aaa; font-style:italic;">Queue empty.</div>';
+                
+                document.getElementById('display-name').innerText = "--";
+                document.getElementById('display-email').innerText = "--";
+                document.getElementById('display-time').innerText = "All caught up!";
+                document.getElementById('display-image').src = "pic/id.png";
+                return;
+            }
+
+            if (currentIndex >= queue.length) currentIndex = 0;
+
+            queue.forEach((user, index) => {
+                const item = document.createElement('div');
+                item.className = 'list-item';
+                
+                if(index === currentIndex) item.classList.add('active'); 
+                item.innerText = user.name;
+                
+                item.onclick = () => {
+                    currentIndex = index; 
+                    loadQueueList(); 
+                };
+
+                pendingListHTML.appendChild(item);
+            });
+
+            const activeUser = queue[currentIndex];
+            document.getElementById('display-name').innerText = activeUser.name;
+            document.getElementById('display-email').innerText = activeUser.email;
+            document.getElementById('display-time').innerText = "Submitted " + activeUser.time;
+
+            const imgElement = document.getElementById('display-image');
+            if (activeUser.image && activeUser.image !== '') {
+                imgElement.src = activeUser.image;
+            } else {
+                imgElement.src = 'pic/id.png'; 
+            }
+
+        }
+
+        function processUser(action) {
+            if(queue.length === 0) return;
+
+            const userArray = queue.splice(currentIndex, 1); 
+            const user = userArray[0];
+            
+            localStorage.setItem('femmelyAdminQueue', JSON.stringify(queue)); 
+            
+            if (action === 'approve') {
+                let allUsers = JSON.parse(localStorage.getItem('allUsers')) || [];
+                allUsers = allUsers.map(u => {
+                    if (u.email === user.email) {
+                        return { ...u, status: "approved" };
+                    }
+                    return u;
+                });
+                localStorage.setItem('allUsers', JSON.stringify(allUsers));
+
+                const currentEmail = localStorage.getItem('currentUserEmail');
+                if (currentEmail === user.email) {
+                    localStorage.setItem('currentUserStatus', 'approved');
+                }
+
+                const approvedHTML = document.getElementById('approved-list');
+                const newItem = document.createElement('div');
+                newItem.className = 'list-item';
+                newItem.innerText = user.name;
+                approvedHTML.insertBefore(newItem, approvedHTML.firstChild);
+                
+                alert("✅ " + user.name + " Approved!");
+            } else {
+                alert("🚨 " + user.name + " Rejected.");
+            }
+            
+            currentIndex = 0; 
+            loadQueueList(); 
+        }
+
+        let currentZoom = 1;
+
+        function zoomImage(action) {
+            const img = document.getElementById('display-image');
+            
+            if (action === 'in') {
+                currentZoom += 0.3; 
+            } else if (action === 'out') {
+                currentZoom -= 0.3; 
+            } else if (action === 'reset') {
+                currentZoom = 1; 
+            }
+
+            if (currentZoom > 3) currentZoom = 3; 
+            if (currentZoom < 0.5) currentZoom = 0.5;
+
+            img.style.transform = `scale(${currentZoom})`;
+        }
+
+        window.onload = loadQueueList;
+    </script>
+</body>
+</html>

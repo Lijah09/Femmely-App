@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>FEMMELY</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,300;0,400;0,600;0,700;0,800;1,400&display=swap" rel="stylesheet">
+</head>
+
+<body>
+    <nav class="navbar">
+        <div class="logo"><a href="index.html">FEMMELY</a></div>
+        
+        <div class="nav-right">
+            <ul class="nav-links" id="navLinks">
+                <li><a href="index.html" class="nav-item" id = "home-link">Home</a></li>
+                <li><a href="about-us.html" class="nav-item" id = "about-link">About Us</a></li>
+                <li><a href="femmely-map.html" class="nav-item active" id = "map-link">Femmely Map</a></li>
+                <li><a href="haven.html" class="nav-item" id = "haven-link">Haven</a></li>
+                <li><a href="profile-help.html" class="nav-item" id = "help-link">Help</a></li>
+            </ul>
+            <div class="nav-icons">
+                <i class="fa-solid fa-bars menu-icon" onclick="toggleMenu()"></i>
+                <a href="login.html" class="login-btn"><i class="fa-regular fa-circle-user"></i> Login</a>
+            </div>
+        </div>
+    </nav>
+    <div class = "fm-body">
+        <div class = "fm-card" id = "fmCard">
+            
+            <div class = "fm-header">
+                <h1 class = "fm-title" id = "fmTitle">Femmely Map</h1>
+            </div>
+            <div class = "femmely-map-container">
+                <div class = "fm-mode-select-card" id = "fmModeSelectCard">
+                    <div class = "fm-mode-select-header">
+                        <p>Welcome to Femmely Map.</p>
+                        <p>To get started, please select a mode.</p>
+                    </div>
+                    <div class = "fm-mode-select-body">
+                        <div class="map-mode-toggle">
+                            <div class = "mode-color-pill" id = "modeColorPill">
+                                <span class="mode-text-safe safe-text" onclick="selectMode('safe')">Fem-safe</span>
+                                
+                                <div class="toggle-dot" id="slidingDot"></div>
+                                
+                                <span class="mode-text-care care-text" onclick="selectMode('care')">Fem-care</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class = "fm-footer">
+                <div class="mini-mode-toggle">
+                    <div class = "mini-color-pill" id = "miniColorPill">
+                        <span class="mini-mode-text-safe mini-safe-text" onclick="selectMode('safe')">FS</span>
+                        <div class="mini-toggle-dot" id="mini-slidingDot"></div>
+                        <span class="mini-mode-text-care mini-care-text" onclick="selectMode('care')">FC</span>
+                    </div>
+                </div>
+                <button class = "fullscreen-btn"><i class="fas fa-expand"></i></button>
+            </div>
+        </div>
+    </div>
+    
+    <footer>
+        <div class="footer-logo">
+            <img src="pic/femlogo.png" alt="FEMMELY Logo"> FEMMELY
+        </div>
+
+        <p class="footer-tagline">Empowering Women Through Safety & Community</p>
+        
+        <div class="footer-nav">
+            <a href="index.html">Home</a>
+            <a href="about-us.html">About Us</a>
+            <a href="femmely-map.html">Femmely Map</a>
+            <a href="haven.html">Haven</a>
+            <a href="profile-help.html">Help</a>
+        </div>
+
+        <div class="footer-socials">
+            <a href="#" class="social-icon">
+                <img src="pic/instagram.png" alt="Instagram">
+            </a>
+            <a href="#" class="social-icon">
+                <img src="pic/facebook.png" alt="Facebook">
+            </a>
+            <a href="#" class="social-icon">
+                <img src="pic/google.png" alt="Google">
+            </a>
+            <a href="#" class="social-icon">
+                <img src="pic/linkedin.png" alt="LinkedIn">
+            </a>
+        </div>
+
+        <p class="copyright">FEMMELY ©2026 All rights reserved</p>
+    </footer>
+
+<div id="unauthorized-overlay" class="hidden-overlay">
+    <div class="overlay-content">
+        <h2><i class="fa-solid fa-circle-exclamation info-icon"></i> Access Denied</h2>
+        <p>You are not authorized to view this page.</p>
+        <a href="login.html" class="btn btn-primary">Go to Login</a>
+    </div>
+</div>
+</body>
+<script src="json/access.js"></script>
+<script>
+    requireLogIn();
+    requireVerification();
+</script>
+<script src="json/femmely-map.js"></script>
+
+
+</html>

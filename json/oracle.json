@@ -1,0 +1,59 @@
+{
+    "trivia":[    {
+            "id": 1,
+            "title" : "blah",
+            "text": "blah blah",
+            "link": "https://www.youtube.com",
+            "tag": "wellness"
+        },
+        {
+            "id": 2,
+            "title" : "blah blah",
+            "text": "blah bee blah",
+            "link": "https://www.google.com",
+            "tag": "mental health"
+        },
+        {
+            "id": 3,
+            "title" : "blah blah blah",
+            "text": "boop blah blah",
+            "link": "https://www.w3schools.com/JS/js_json_arrays.asp",
+            "tag": "nutrition"
+        },
+        {
+            "id": 4,
+            "title" : "Setting Boundaries",
+            "text": "Exploring the psychological benefits of setting firm boundaries to protect your energy, prevent burnout, and foster healthier relationships.",
+            "link": "https://youtu.be/9Xo8s7v6n5m?si=3c4d5e6f7g8h9i0j",
+            "tag": "fitness"
+        },
+        {
+            "id": 5,
+            "title" : "blah blah blah 2",
+            "text": "blah blah blah",
+            "link": "https://youtu.be/2a3b4c5d6e7f8g9h?si=1a2b3c4d5e6f7g8h",
+            "tag": "self care"
+        },
+        {
+            "id": 6,
+            "title" : "blah blah blah 3",
+            "text": "blah blah blah",
+            "link": "https://youtu.be/3c4d5e6f7g8h9i0j?si=4a5b6c7d8e9f0a1b",
+            "tag": "mindfulness"
+        },
+        {
+            "id": 7,
+            "title" : "blah blah blah 4",
+            "text": "blah blah blah",
+            "link": "https://youtu.be/4d5e6f7g8h9i0j1k?si=2a3b4c5d6e7f8g9h",
+            "tag": "spiritual growth"
+        },
+        {
+            "id": 8,
+            "title" : "blah blah blah 5",
+            "text": "blah blah blah",
+            "link": "https://youtu.be/5e6f7g8h9i0j1k2l?si=3c4d5e6f7g8h9i0j",
+            "tag": "safety"
+        }
+    ]
+}
