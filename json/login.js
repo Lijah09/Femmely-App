@@ -1,7 +1,7 @@
 const emailInput = document.querySelector('.login-container input[type="email"]');
 const passwordInput = document.querySelector('.login-container input[type="password"]');
 
-const registerBtn = document.querySelector('#content-register .login-submit');
+const registerBtn = document.querySelector('#content-register .register-submit');
 const loginBtn = document.querySelector('#content-login .login-submit');
 
 // --- REGISTRATION LOGIC ---
